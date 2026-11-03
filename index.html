@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IELTS Line Graphs Route</title>
-<meta name="description" content="IELTS Writing Task 1 line graphs: four apps in order, from vocabulary to a full report.">
+<meta name="description" content="IELTS Writing Task 1 line graphs: five apps in order, from vocabulary to a full report.">
 <style>
-/* Layout: one hero with a self-drawing line (the route), then a vertical route of four stops, each in its own app's colours. */
+/* Layout: one hero with a self-drawing line (the route), then a vertical route of five stops, each in its own app's colours. */
 :root{
   --bg:#f3f4f7; --grid:rgba(26,31,46,.06); --card:#ffffff; --ink:#1a1f2e; --muted:#5d6475; --line:#dcdfe7;
   --hero:#1a1f2e; --onhero:#f6f7fb; --onhero-muted:#b9bfd0;
-  --a1:#1f7a4f; --a1b:#c2185b; --a2:#5b3fc4; --a2b:#d99400; --a3:#b5482a; --a3b:#2f3e57; --a4:#1e5bb8; --a4b:#e0a800;
+  --a1:#1f7a4f; --a1b:#c2185b; --a2:#5b3fc4; --a2b:#d99400; --a5:#2b4c55; --a5b:#c9a227; --a3:#b5482a; --a3b:#2f3e57; --a4:#1e5bb8; --a4b:#e0a800;
   --font-display:"Trebuchet MS","Segoe UI",system-ui,sans-serif;
   --font-body:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
   --font-ar:"Tahoma","Geeza Pro","Noto Naskh Arabic","Segoe UI",sans-serif;
@@ -18,12 +18,12 @@
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#11141c; --grid:rgba(255,255,255,.04); --card:#1a1f2b; --ink:#eceef4; --muted:#a6adbf; --line:#2d3343;
   --hero:#0b0e15; --onhero:#f6f7fb; --onhero-muted:#a6adbf;
-  --a1:#5fd39a; --a1b:#ff6fa5; --a2:#a793ff; --a2b:#ffc23d; --a3:#ff8a65; --a3b:#9fb4d6; --a4:#7fb0ff; --a4b:#ffd54a; color-scheme:dark;
+  --a1:#5fd39a; --a1b:#ff6fa5; --a2:#a793ff; --a2b:#ffc23d; --a5:#8fd0c4; --a5b:#f7dc6f; --a3:#ff8a65; --a3b:#9fb4d6; --a4:#7fb0ff; --a4b:#ffd54a; color-scheme:dark;
 }}
 :root[data-theme="dark"]{
   --bg:#11141c; --grid:rgba(255,255,255,.04); --card:#1a1f2b; --ink:#eceef4; --muted:#a6adbf; --line:#2d3343;
   --hero:#0b0e15; --onhero:#f6f7fb; --onhero-muted:#a6adbf;
-  --a1:#5fd39a; --a1b:#ff6fa5; --a2:#a793ff; --a2b:#ffc23d; --a3:#ff8a65; --a3b:#9fb4d6; --a4:#7fb0ff; --a4b:#ffd54a; color-scheme:dark;
+  --a1:#5fd39a; --a1b:#ff6fa5; --a2:#a793ff; --a2b:#ffc23d; --a5:#8fd0c4; --a5b:#f7dc6f; --a3:#ff8a65; --a3b:#9fb4d6; --a4:#7fb0ff; --a4b:#ffd54a; color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{font-size:18px}
@@ -48,7 +48,7 @@ a{color:inherit}
 .start:hover{filter:brightness(1.08)}
 .route-svg{width:100%;height:auto;display:block}
 .route-svg .gl{stroke:rgba(255,255,255,.10);stroke-width:1}
-.route-svg .path{fill:none;stroke:url(#rg);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.6s ease-out .3s forwards}
+.route-svg .path{fill:none;stroke:url(#rg);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.8s ease-out .3s forwards}
 .route-svg .dot{opacity:0;animation:pop .4s ease-out forwards}
 .route-svg text{font-family:var(--font-display);font-weight:800;font-size:15px}
 .route-svg .lbl{fill:var(--onhero);font-size:13px;font-weight:700;font-family:var(--font-body)}
@@ -63,7 +63,7 @@ main{padding-block:34px 20px}
 .sec-h h2{font-size:1.6rem}
 .sec-h .ar{color:var(--muted)}
 .route{list-style:none;margin:0;padding:0;display:grid;gap:18px;position:relative}
-.route::before{content:"";position:absolute;left:27px;top:20px;bottom:20px;width:4px;border-radius:4px;background:linear-gradient(var(--a1),var(--a2),var(--a3),var(--a4))}
+.route::before{content:"";position:absolute;left:27px;top:20px;bottom:20px;width:4px;border-radius:4px;background:linear-gradient(var(--a1),var(--a2),var(--a5),var(--a3),var(--a4))}
 .stop{display:grid;grid-template-columns:58px minmax(0,1fr);gap:16px;position:relative}
 .num{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-weight:900;font-size:1.5rem;color:#fff;background:var(--c);border:4px solid var(--bg);position:relative;z-index:1}
 .app{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px;min-width:0;border-top:6px solid var(--c)}
@@ -71,6 +71,7 @@ main{padding-block:34px 20px}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
 .tag{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:99px;padding:3px 10px;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c)}
 .tag.day{background:color-mix(in srgb,var(--cb) 22%,transparent);color:var(--ink)}
+.tag.new{background:var(--cb);color:#1a1f2e}
 .app h3{font-size:1.35rem}
 .app .ar.t{color:var(--muted);font-size:.95rem}
 .app p{margin:6px 0;max-width:60ch}
@@ -80,11 +81,15 @@ main{padding-block:34px 20px}
 .side svg{width:100%;height:auto;max-height:90px}
 .side svg .l1{fill:none;stroke:var(--c);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
 .side svg .l2{fill:none;stroke:var(--cb);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.side svg .board{fill:#24443b;stroke:#8b5e3c;stroke-width:5}
+.side svg .chalk{fill:none;stroke:#f3f1e7;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.side svg .chalk2{fill:none;stroke:#f7dc6f;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.side svg .chalk3{fill:none;stroke:#8fe3b6;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .open{display:flex;justify-content:center;align-items:center;gap:8px;text-decoration:none;font-weight:800;background:var(--c);color:#fff;border-radius:12px;padding:11px 14px}
 .open:hover{filter:brightness(1.08)}
 :root[data-theme="dark"] .open, :root[data-theme="dark"] .num{color:#11141c}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .open, :root:not([data-theme="light"]) .num{color:#11141c} }
-.s1{--c:var(--a1);--cb:var(--a1b)} .s2{--c:var(--a2);--cb:var(--a2b)} .s3{--c:var(--a3);--cb:var(--a3b)} .s4{--c:var(--a4);--cb:var(--a4b)}
+.s1{--c:var(--a1);--cb:var(--a1b)} .s2{--c:var(--a2);--cb:var(--a2b)} .s3{--c:var(--a5);--cb:var(--a5b)} .s4{--c:var(--a3);--cb:var(--a3b)} .s5{--c:var(--a4);--cb:var(--a4b)}
 
 /* tips */
 .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:30px}
@@ -104,18 +109,19 @@ footer b{color:var(--ink)}
     <div>
       <span class="kicker">IELTS Writing Task 1 · Line graphs</span>
       <h1>From words to a <span>full report</span></h1>
-      <p>Four apps, one route. Start with the vocabulary, build trend sentences, write three reports in the workshop, then review everything in the Line Graphs Lab.</p>
-      <p class="ar">أربعة تطبيقات بالترتيب: المفردات، ثم بناء الجمل، ثم ورشة الكتابة، ثم المراجعة النهائية.</p>
+      <p>Five apps, one route. Start with the vocabulary, build trend sentences, watch a full report being written on the chalkboard, write three reports in the workshop, then review everything in the Line Graphs Lab.</p>
+      <p class="ar">خمسة تطبيقات بالترتيب: المفردات، ثم بناء الجمل، ثم مشاهدة كتابة تقرير كامل، ثم ورشة الكتابة، ثم المراجعة النهائية.</p>
       <a class="start" href="#route">See the route ↓</a>
     </div>
-    <svg class="route-svg" viewBox="0 0 480 300" role="img" aria-label="A line rising through four steps: vocabulary, sentences, workshop, review">
-      <defs><linearGradient id="rg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" style="stop-color:var(--a1)"/><stop offset=".35" style="stop-color:var(--a2)"/><stop offset=".7" style="stop-color:var(--a3)"/><stop offset="1" style="stop-color:var(--a4)"/></linearGradient></defs>
+    <svg class="route-svg" viewBox="0 0 480 300" role="img" aria-label="A line rising through five steps: vocabulary, sentences, watch, workshop, review">
+      <defs><linearGradient id="rg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" style="stop-color:var(--a1)"/><stop offset=".3" style="stop-color:var(--a2)"/><stop offset=".55" style="stop-color:var(--a5b)"/><stop offset=".78" style="stop-color:var(--a3)"/><stop offset="1" style="stop-color:var(--a4)"/></linearGradient></defs>
       <line class="gl" x1="30" x2="460" y1="60" y2="60"/><line class="gl" x1="30" x2="460" y1="120" y2="120"/><line class="gl" x1="30" x2="460" y1="180" y2="180"/><line class="gl" x1="30" x2="460" y1="240" y2="240"/>
-      <path class="path" pathLength="1" d="M50 240 L150 190 L250 150 L350 95 L440 50"/>
-      <g class="dot" style="animation-delay:.6s"><circle cx="150" cy="190" r="16" style="fill:var(--a1)"/><text x="150" y="195" text-anchor="middle" fill="#fff">1</text><text class="lbl" x="150" y="228" text-anchor="middle">Words</text></g>
-      <g class="dot" style="animation-delay:1.2s"><circle cx="250" cy="150" r="16" style="fill:var(--a2)"/><text x="250" y="155" text-anchor="middle" fill="#fff">2</text><text class="lbl" x="250" y="188" text-anchor="middle">Sentences</text></g>
-      <g class="dot" style="animation-delay:1.8s"><circle cx="350" cy="95" r="16" style="fill:var(--a3)"/><text x="350" y="100" text-anchor="middle" fill="#fff">3</text><text class="lbl" x="350" y="133" text-anchor="middle">Workshop</text></g>
-      <g class="dot" style="animation-delay:2.5s"><circle cx="440" cy="50" r="16" style="fill:var(--a4)"/><text x="440" y="55" text-anchor="middle" fill="#fff">4</text><text class="lbl" x="420" y="88" text-anchor="middle">Review</text></g>
+      <path class="path" pathLength="1" d="M40 252 L120 210 L200 172 L280 132 L360 92 L440 50"/>
+      <g class="dot" style="animation-delay:.5s"><circle cx="120" cy="210" r="16" style="fill:var(--a1)"/><text x="120" y="215" text-anchor="middle" fill="#fff">1</text><text class="lbl" x="120" y="248" text-anchor="middle">Words</text></g>
+      <g class="dot" style="animation-delay:1s"><circle cx="200" cy="172" r="16" style="fill:var(--a2)"/><text x="200" y="177" text-anchor="middle" fill="#fff">2</text><text class="lbl" x="200" y="210" text-anchor="middle">Sentences</text></g>
+      <g class="dot" style="animation-delay:1.5s"><circle cx="280" cy="132" r="16" style="fill:var(--a5b)"/><text x="280" y="137" text-anchor="middle" fill="#1a1f2e">3</text><text class="lbl" x="280" y="170" text-anchor="middle">Watch</text></g>
+      <g class="dot" style="animation-delay:2s"><circle cx="360" cy="92" r="16" style="fill:var(--a3)"/><text x="360" y="97" text-anchor="middle" fill="#fff">4</text><text class="lbl" x="360" y="130" text-anchor="middle">Workshop</text></g>
+      <g class="dot" style="animation-delay:2.6s"><circle cx="440" cy="50" r="16" style="fill:var(--a4)"/><text x="440" y="55" text-anchor="middle" fill="#fff">5</text><text class="lbl" x="430" y="88" text-anchor="middle">Review</text></g>
     </svg>
   </div>
 </header>
@@ -146,23 +152,33 @@ footer b{color:var(--ink)}
 
     <li class="stop s3"><div class="num" aria-hidden="true">3</div>
       <article class="app"><div>
-        <div class="tags"><span class="tag">Step 3 · Writing practice</span></div>
+        <div class="tags"><span class="tag">Step 3 · Watch a model</span><span class="tag new">New</span></div>
+        <h3>The Line Graph Chalkboard</h3><div class="ar t">السبورة: شاهد كتابة التقرير</div>
+        <p>Watch a full Band 6 report being written on a chalkboard, paragraph by paragraph, before you write your own.</p>
+        <ul><li>See the lines draw themselves year by year, with trend words in Arabic</li><li>Introduction, overview and two body paragraphs, colour-coded</li><li>Pause, change the speed, or jump to any scene</li></ul>
+      </div>
+      <div class="side"><svg viewBox="0 0 220 90" aria-hidden="true"><rect class="board" x="4" y="4" width="212" height="82" rx="6"/><path class="chalk" d="M26 72 V18 M26 72 H196"/><path class="chalk3" d="M34 64 L74 58 L114 50 L154 34 L190 22"/><path class="chalk2" d="M34 40 L74 30 L114 24 L154 34 L190 44"/></svg>
+        <a class="open" href="https://nana390-tech.github.io/IELTS-Series-Writing-Task-1-Line-graph-CHALKBOARD/" target="_blank" rel="noopener">Open Step 3 ↗</a></div></article></li>
+
+    <li class="stop s4"><div class="num" aria-hidden="true">4</div>
+      <article class="app"><div>
+        <div class="tags"><span class="tag">Step 4 · Writing practice</span></div>
         <h3>Line Graph Report Workshop</h3><div class="ar t">ورشة كتابة التقرير</div>
         <p>Write three complete reports on three new graphs. The help gets smaller each time.</p>
         <ul><li>Workshop 1: guided, with sentence frames</li><li>Workshop 2: supported, with hints and a checklist</li><li>Workshop 3: on your own, in 20 minutes</li></ul>
       </div>
       <div class="side"><svg viewBox="0 0 220 90" aria-hidden="true"><path class="l1" d="M10 30 L60 26 L110 40 L160 62 L210 70"/><path class="l2" d="M10 76 L60 64 L110 42 L160 30 L210 16"/></svg>
-        <a class="open" href="https://nana390-tech.github.io/IELTS-Series-Writing-Task-1-Line-Graphs-Sentence-Structure-PRACTICE-/" target="_blank" rel="noopener">Open Step 3 ↗</a></div></article></li>
+        <a class="open" href="https://nana390-tech.github.io/IELTS-Series-Writing-Task-1-Line-Graphs-Sentence-Structure-PRACTICE-/" target="_blank" rel="noopener">Open Step 4 ↗</a></div></article></li>
 
-    <li class="stop s4"><div class="num" aria-hidden="true">4</div>
+    <li class="stop s5"><div class="num" aria-hidden="true">5</div>
       <article class="app"><div>
-        <div class="tags"><span class="tag">Step 4 · Review</span></div>
+        <div class="tags"><span class="tag">Step 5 · Review</span></div>
         <h3>Line Graphs Lab</h3><div class="ar t">مختبر الرسوم البيانية الخطية</div>
         <p>Bring it all together: read the graph, use the trend words, build the overview and write your own report.</p>
         <ul><li>Spot the trend, complete the report, verb ⇄ noun</li><li>Order a report and write your own</li><li>Final quiz and certificate at 80%</li></ul>
       </div>
       <div class="side"><svg viewBox="0 0 220 90" aria-hidden="true"><path class="l1" d="M10 60 L60 40 L110 50 L160 28 L210 18"/><path class="l2" d="M10 40 L60 52 L110 36 L160 46 L210 58"/></svg>
-        <a class="open" href="https://nana390-tech.github.io/IELTS-Writing---Task-1-Line-Graphs/" target="_blank" rel="noopener">Open Step 4 ↗</a></div></article></li>
+        <a class="open" href="https://nana390-tech.github.io/IELTS-Writing---Task-1-Line-Graphs/" target="_blank" rel="noopener">Open Step 5 ↗</a></div></article></li>
   </ol>
 
   <div class="tips">
